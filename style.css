@@ -1,0 +1,140 @@
+/** @format */
+@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap");
+
+/* colors */
+:root {
+  --green-lighter: hsl(148, 38%, 91%);
+  --green-medium: hsl(169, 82%, 27%);
+  --red: hsl(0, 66%, 54%);
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Karla", sans-serif;
+  /* line-height: 0.5px; */
+}
+/* add to the body */
+body {
+  background: var(--green-lighter);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+h2 {
+  padding: 10px;
+  padding-top: 15px;
+}
+form {
+  padding: 0.725rem;
+}
+
+.container {
+  background-color: #fff;
+  width: 300px;
+  max-width: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.form-control {
+  margin-bottom: 20px;
+  padding-bottom: 0.625rem;
+  position: relative;
+  line-height: 0.5px;
+  /* border:1px solid black */
+}
+
+.form-control span {
+  color: var(--green-medium);
+  padding-left: 5px;
+}
+
+.form-control label {
+  margin-bottom: 8px;
+  display: inline-block;
+  font-size: 14px;
+}
+.query-type label {
+  display: inline-block;
+  margin-bottom: 8px;
+  margin-top: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="submit"],
+.checkbox-group,
+textarea {
+  width: 100%;
+  border: 0.5px solid var(--green-medium);
+  border-radius: 4px;
+  display: inline-block;
+  font-size: 14px;
+  padding: 0.625rem 0.75rem; /* 10px and 12px */
+  outline: none;
+}
+
+input:hover,
+textarea:hover {
+  border: 1px solid var(--green-medium);
+  cursor: pointer;
+}
+input[type="submit"] {
+  background: var(--green-medium);
+  color: white;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.form-control small {
+  color: var(--red);
+  font-size: 12px;
+  position: absolute;
+  top: 55px;
+  left: 0;
+  bottom: 0;
+}
+
+.form-control.error input,
+.form-control.error textarea {
+  border: 1px solid var(--red);
+}
+.success {
+  background: #000000;
+  color: white;
+  padding: 10px 0 10px 15px;
+  border-radius: 5px;
+  width: 25%;
+  max-width: 100%;
+  margin-top: 20px;
+  position: absolute;
+  top: 40px;
+}
+
+.container textarea {
+  resize: none;
+  display: block;
+}
+.container .subject small,
+.container .consent small {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  line-height: 2px;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 550px;
+  }
+  .row {
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+    width: 100%;
+  }
+}
