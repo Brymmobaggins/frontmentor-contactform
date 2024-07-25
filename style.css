@@ -7,7 +7,9 @@
   --green-medium: hsl(169, 82%, 27%);
   --red: hsl(0, 66%, 54%);
 }
-* {
+*,
+*::before,
+*:after {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -35,7 +37,7 @@ form {
 
 .container {
   background-color: #fff;
-  width: 300px;
+  width: 350px;
   max-width: 100%;
   border-radius: 5px;
   overflow: hidden;
@@ -58,10 +60,8 @@ form {
   display: inline-block;
   font-size: 14px;
 }
-.query-type label {
-  display: inline-block;
-  margin-bottom: 8px;
-  margin-top: 10px;
+label {
+  font-size: 14px;
 }
 
 input[type="text"],
@@ -70,24 +70,37 @@ input[type="submit"],
 .checkbox-group,
 textarea {
   width: 100%;
-  border: 0.5px solid var(--green-medium);
+  border: 1px solid var(--green-lighter);
   border-radius: 4px;
   display: inline-block;
   font-size: 14px;
   padding: 0.625rem 0.75rem; /* 10px and 12px */
   outline: none;
 }
-
-input:hover,
-textarea:hover {
-  border: 1px solid var(--green-medium);
-  cursor: pointer;
-}
 input[type="submit"] {
   background: var(--green-medium);
-  color: white;
+  color: #ffffff;
   font-weight: 400;
+}
+
+input:focus,
+textarea:focus,
+input:hover,
+textarea:hover,
+.checkbox-group:hover {
+  border: 1px solid var(--green-medium);
+}
+input:hover,
+textarea:hover {
   cursor: pointer;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  accent-color: var(--green-medium);
+}
+.checkbox-group.checked {
+  background: var(--green-lighter);
 }
 
 .form-control small {
@@ -103,16 +116,18 @@ input[type="submit"] {
 .form-control.error textarea {
   border: 1px solid var(--red);
 }
+.subject {
+  margin-top: 20px;
+}
 .success {
   background: #000000;
   color: white;
-  padding: 10px 0 10px 15px;
+  padding: 5px 0 10px 15px;
   border-radius: 5px;
-  width: 25%;
+  width: 60%;
   max-width: 100%;
-  margin-top: 20px;
   position: absolute;
-  top: 40px;
+  top: 3px;
 }
 
 .container textarea {
@@ -126,7 +141,7 @@ input[type="submit"] {
   bottom: 0;
   line-height: 2px;
 }
-
+/* when screen width is greater than 768px */
 @media screen and (min-width: 768px) {
   .container {
     width: 550px;
@@ -136,5 +151,9 @@ input[type="submit"] {
     flex-direction: row;
     column-gap: 10px;
     width: 100%;
+  }
+  .success {
+    width: 25%;
+    top: 50px;
   }
 }

@@ -76,6 +76,6 @@ function clearInput() {
   email.value = "";
   messageSubject.value = "";
   consent.value = "";
-//   consent.
 }
-// setSuccess()
+
+
